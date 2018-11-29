@@ -1,0 +1,12 @@
+#todo-table {
+  background-color: #f3f3f3;
+}
+
+.list-group li {
+  cursor: pointer;
+}
+
+.list-group li:hover {
+  background-color: #f9f9f9;
+  text-decoration: line-through;
+}
