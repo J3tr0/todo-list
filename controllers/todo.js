@@ -1,6 +1,6 @@
 const bodyParser = require("body-parser");
 
-const data = [
+let data = [
   { item: "Get Milk" },
   { item: "walk dog" },
   { item: "kick some coding ass" }
@@ -18,7 +18,10 @@ module.exports = app => {
     res.json(data);
   });
 
-  app.delete("/", (req, res) => {
-    //stuff
+  app.delete("/:item", (req, res) => {
+    data = data.filter(todo => {
+      return todo.item.replace(/ /g, "-") !== req.params.item;
+    });
+    res.json(data);
   });
 };
